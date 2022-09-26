@@ -1,0 +1,520 @@
+body {
+	 background-color: rgba(0, 0, 0, 1);
+	 color: white;
+	 fill: white;
+	 padding: 0;
+	 margin: 0;
+	font-family: monaco;
+ }
+ 
+ button:focus {
+	outline: none;
+}
+ 
+ input:focus {
+	outline: none;
+}
+ 
+ textarea:focus {
+	outline: none;
+}
+ 
+ img:focus {
+	outline: none;
+}
+ 
+ img {
+//	border: 0px solid;
+}
+
+a {
+	text-decoration: none;
+}
+
+.centerHolder {
+	width: 100%;
+	text-align: center;
+}
+
+ header {
+	width: 100%;
+	height: 110px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+	background-color: rgba(0, 0, 0, 0.95);
+	overflow-y: hidden;
+	display: block;
+	transition: height 0.3s;
+}
+
+header #youtubeIcon {
+	height: 40px;
+	margin: 0 10px;
+	line-height: 120px;
+	background-color: rgba(255, 255, 255, 0.2);
+	transform: translateY(7px);
+}
+ 
+header #title {
+	font-size: 40px;
+	font-weight: 300;
+	line-height: 110px;
+	font-family: patrick hand;
+	color: white;
+}
+ 
+header #iconHolder {
+	height: 110px;
+	line-height: 120px;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+ 
+header #iconHolder .icon {
+	margin: 0 10px;
+}
+ 
+header #iconHolder .icon svg {
+	height: 30px;
+	width: 30px;
+}
+ 
+.videoBox {
+//	background-color: rgba(0, 0, 0, 0.05);
+	margin: 2vw;
+	width: 46vw;
+	height: 45vw;
+	display: inline-block;
+	color: white;
+}
+
+.videoBox #videoImageHolder {
+	width: 44vw;
+	height: 30vw;
+	margin: 0 1vw;
+	overflow: hidden;
+	display: block;
+}
+
+.videoBox #videoImageHolder #image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: white;
+}
+
+.videoBox #channelImageHolder {
+	margin: 0;
+	padding: 2vw 2vw 2vw 1vw;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.videoBox #channelImageHolder #image {
+	width: 7vw;
+	height: 7vw;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	color: white;
+	
+	display: none;
+}
+
+.videoBox #contentHolder {
+	margin: 0;
+	height: 12vw;
+	overflow: hidden;
+	display: inline-block;
+	width: 35vw;
+	color: black;
+	padding: 1vw 0;
+	color: white;
+}
+
+.videoBox #contentHolder #name {
+	font-size: 25px;
+	height: 6vw;
+	font-weight: 700;
+	overflow: hidden;
+	display: inline-block;
+	color: white;
+}
+
+.videoBox #contentHolder #detailsHolder {
+	height: 8vw;
+	overflow: hidden;
+	display: inline-block;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.videoBox #contentHolder #detailsHolder label {
+	font-size: 22px;
+	font-weight: 100;
+	display: inline-block;
+}
+
+.videoBox #contentHolder #detailsHolder ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.videoBox #contentHolder #detailsHolder ul li {
+	display: inline-block;
+	margin: 0 3px;
+}
+
+
+.resultBox {
+	margin: 2vw;
+	width: 96vw;
+	height: 18vw;
+	display: block;
+	color: white;
+}
+
+.resultBox #videoImageHolder {
+	width: 30vw;
+	height: 18vw;
+	margin: 0 1vw;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.resultBox #videoImageHolder #image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: white;
+}
+
+.resultBox #contentHolder {
+	margin: 0;
+	height: 18vw;
+	overflow: hidden;
+	display: inline-block;
+	width: 50vw;
+	color: black;
+	padding: 1vw 0;
+	color: white;
+}
+
+.resultBox #contentHolder #name {
+	font-size: 25px;
+	height: 6vw;
+	font-weight: 700;
+	overflow: hidden;
+	display: inline-block;
+	color: white;
+}
+
+.resultBox #contentHolder #detailsHolder {
+	height: 8vw;
+	width: 100%;
+	overflow: hidden;
+	display: inline-block;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.resultBox #contentHolder #detailsHolder label {
+	font-size: 22px;
+	font-weight: 100;
+	display: inline-block;
+}
+
+.resultBox #contentHolder #detailsHolder ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.resultBox #contentHolder #detailsHolder ul li {
+	display: inline-block;
+	margin: 0 3px;
+}
+
+
+#searchHolder {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#searchHolder form {
+	width: 100%;
+	line-height: 110px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+#searchHolder form [name=input] {
+	width: 85%;
+	height: 70px;
+	border: none;
+	border-bottom: 3px solid rgba(255, 255, 255, 1);
+	font-size: 30px;
+	margin: 5px 0;
+	font-size: 28px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+
+#searchHolder form #back {
+	margin: 2.5px 10px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	border: none;
+	height: 80px;
+	font-size: 40px;
+}
+
+#searchHolder form [type=submit] {
+	margin: 2.5px 10px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	height: 80px;
+}
+
+#searchHolder form [type=submit] svg {
+	height: 30px;
+	width: 30px;
+	fill: white;
+}
+
+#searchHolder #background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+	#videoSearcherForm #searchResults {
+		width: 100%;
+		margin: 0;
+		text-align: left;
+		border-radius: 0 0 5px 5px;
+		overflow: hidden;
+		background-color: rgba(0, 0, 0, 0);
+		max-height: 10cm;
+		overflow-y: scroll;
+	}
+	
+	#videoSearcherForm #searchResults .result {
+		width: 100%;
+		line-height: 1.5cm;
+		max-height: 1.5cm;
+		display: block;
+		font-size: 25px;
+		color: white;
+		text-indent: 3mm;
+		transition: background-color 0.2s;
+		overflow: hidden;
+	}
+
+	#videoSearcherForm #searchResults .result:active {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	
+#moreLoader {
+	text-align: center;
+	padding: 1.5cm 0;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+	
+#moreLoader #loader {
+	width: 1cm;
+	height: 1cm;
+	border: 5px solid rgba(255, 255, 255, 0.7);
+	border-top: 5px solid rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 3mm;
+	vertical-align: middle;
+	-webkit-animation: spin 0.4s linear infinite;
+}
+
+#errorHolder {
+	padding: 3cm 0;
+	background-color: rgba(255, 255, 255, 0.05);
+	display: none;
+	text-align: center;
+}
+
+#errorHolder #reload {
+	font-size: 30px;
+	color: white;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 1cm 2cm;
+	border-radius: 20px;
+	transition: background-color 0.2s;
+	
+}
+
+#errorHolder #reload:active {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+	
+	
+
+ #bigDisplay {
+ 	width: 100%;
+ 	height: 100%;
+	background-color:  rgba(255, 255, 255, 0.1);
+	position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 		display: none;
+ 		z-index: 9;
+ }
+ 
+ #bigDisplay #topic {
+ 	color: white;
+ 	font-size: 40px;
+ 	font-weight: 700;
+ 	display: inline-block;
+ }
+ 
+ #bigDisplay .comment {
+ 	color: white;
+ 	font-size: 20px;
+ }
+ 
+	 #bigDisplay #main {
+ 		width: 86%;
+ 		margin: 0 5%;
+ 		background-color: rgba(0, 0, 0, 1);
+ 		margin-top: 50%;
+ 		transform: translateY(-50%);
+ 		max-height: 20cm;
+ 		overflow-y: scroll;
+ 		padding: 2cm 2%;
+ 		text-align: center;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		position: relative;
+	 }
+ 	
+	 #bigDisplay #background {
+ 		width: 100%;
+ 		height: 100%;
+ 		position: absolute;
+ 		left: 0;
+ 		top: 0;
+	 }
+ 	
+ 
+ 	#bigDisplay .option {
+ 		position: relative;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		width: 7cm;
+ 		height: 4.5cm;
+ 		background-color: black;
+ 		color: white;
+ 		display: inline-block;
+ 		margin: 3mm;
+ 	}
+ 	
+ 	#bigDisplay .option video {
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+ 
+ 	#bigDisplay .option #content {
+ 		width: 100%;
+ 		height: 30%;
+ 		position: absolute;
+ 		bottom: 0;
+		background-color:  rgba(255, 255, 255, 0.2);
+		text-align: left
+ 		
+ 	}
+
+ 	#bigDisplay .option #content div {
+ 		display: inline-block;
+ 		margin: 0 2mm;
+ 		
+ 	}
+
+ 	#bigDisplay .option #content #pixelHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 	}
+
+ 	#bigDisplay .option #content #sizeHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		right: 0;
+ 		line-height: 1.5cm;
+ 	}
+
+ 	#bigDisplay .option  #pixel {
+ 		font-size: 30px;
+ 	}
+
+ 	#bigDisplay .option  #originalSize {
+ 		font-size: 25px;
+ 		line-height: 1.5cm;
+ 		color: white;
+ 		font-weight: 700;
+ 	}
+
+ #toast {
+	position: fixed;
+	bottom: 2cm;
+	display: none;
+	border-radius: 10px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+	line-height: 7mm;
+	font-size: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 7mm 1cm;
+	opacity: 0;
+	text-align: center;
+	max-width: 80%;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	z-index: 9;
+}
+
+.bigButton {
+ 		font-size: 40px;
+		font-weight: 700;
+		padding: 1cm 3cm;
+ 		border-radius: 10px;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		border: 0px solid;
+ 		color: white;
+ 		transition: background-color 0.3s;
+ 		background-color: rgba(0, 0, 0, 1);
+ 	}
+ 	
+#downloaderIframe {
+	display: none;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+ 
