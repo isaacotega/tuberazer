@@ -1,0 +1,493 @@
+:root {
+	--darkColor: blue;
+}
+
+body {
+	 background-color: rgba(0, 0, 0, 1);
+	 padding: 0;
+	 margin: 0;
+	font-family: monaco;
+//	 color: white;
+fill: white;
+ }
+ 
+ button:focus {
+	outline: none;
+}
+ 
+ input:focus {
+	outline: none;
+}
+ 
+ textarea:focus {
+	outline: none;
+}
+ 
+ img:focus {
+	outline: none;
+}
+ 
+ img {
+//	border: 0px solid;
+}
+
+.centerHolder {
+	width: 100%;
+	text-align: center;
+}/*
+
+.g-signin2 {
+	height: 5cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
+	background-color: blue;
+	width: 80%;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	margin: 1cm 0;
+}
+ */
+.facebookLoginButton {
+	height: 5cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
+	background-color: blue;
+	width: 80%;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	display: block;
+}
+ 
+ header {
+	display: block;
+	width: 98%;
+	background-color: rgba(0, 0, 0, 1);
+	line-height: 3cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+	padding: 0 1%;
+}
+
+header #credits {
+	float: right;
+	margin: 0 10px;
+}
+
+.coinHolder {
+}
+
+.coinHolder svg {
+	fill: yellow;
+	height: 40px;
+	width: 40px;
+	margin: 0;
+	margin: -10px 0 0 0;
+	display: inline-block;
+	transform: translateY(20%);
+}
+
+.coinHolder #number {
+	font-size: 28px;
+//	float: right;
+	margin: -0 0 0 -20px;
+	text-indent: 0;
+}
+
+ footer {
+	display: block;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 1);
+	height: 3cm;
+	color: white;
+	font-weight: 700;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+}
+
+footer #bottomNav {
+	width: 100%;
+	text-align: center;
+}
+
+footer #bottomNav [selected] {
+	color: orange;
+}
+
+footer #bottomNav [selected] svg {
+	fill: orange;
+}
+
+footer #bottomNav .option {
+	border-radius: 40px;
+	transition: background-color 0.2s;
+	position: relative;
+	height: 100%;
+}
+
+footer #bottomNav .option:active {
+	background-color:  rgba(255, 255, 255, 0.2);
+}
+
+footer #icon {
+	fill: white;
+}
+
+footer #icon svg {
+	height: 45px;
+	width: 45px;
+	margin: 10px 0;
+}
+
+footer #hint {
+	font-size: 20px;
+	margin: 0 0 5px 0;
+}
+
+footer #cinema #downloadIcon {
+	display: none;
+}
+
+.roundNotificationAttachment {
+	position: absolute;
+	right: 5mm;
+	top: 0;
+	border-radius: 50%;
+	background-color:  orange;
+	color: white;
+	width: 1.2cm;
+	height: 1.2cm;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.2cm;
+}
+
+footer #compactedIcon {
+	background-color:  green;
+	bottom: 0;
+	top: 1.4cm;
+}
+
+#body {
+	position: fixed;
+	top: 2.8cm;
+	height: 84%;
+	width: 100%;
+}
+
+#body .page {
+	display: none;
+}
+
+#body #mainContent {
+	display: block;
+}
+ 
+#body #loader {
+	background-color:  rgba(255, 255, 255, 0.2);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+ 
+#body #loader #roller {
+	background-color:  rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 4cm;
+	width: 4cm;
+	border: 15px solid rgba(0, 0, 0, 0.1);
+	border-top: 15px solid white;
+	border-radius: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	animation: spin 0.8s linear infinite;
+}
+
+#body #mainContent {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow-y: scroll;
+}
+ 
+ #toast {
+	position: fixed;
+	bottom: 2cm;
+	display: none;
+	border-radius: 10px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+	line-height: 7mm;
+	font-size: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 7mm 1cm;
+	opacity: 0;
+	text-align: center;
+	max-width: 80%;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	z-index: 9;
+}
+
+
+ #bigDisplay {
+ 	width: 100%;
+ 	height: 100%;
+	background-color:  rgba(255, 255, 255, 0.1);
+	position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 		display: none;
+ 		z-index: 9;
+ }
+ 
+ #bigDisplay #topic {
+ 	color: white;
+ 	font-size: 40px;
+ 	font-weight: 700;
+ 	display: inline-block;
+ }
+ 
+ #bigDisplay .comment {
+ 	color: white;
+ 	font-size: 20px;
+ }
+ 
+	 #bigDisplay #main {
+ 		width: 86%;
+ 		margin: 0 5%;
+ 		background-color: rgba(0, 0, 0, 1);
+ 		margin-top: 50%;
+ 		transform: translateY(-50%);
+ 		max-height: 20cm;
+ 		overflow-y: scroll;
+ 		padding: 2cm 2%;
+ 		text-align: center;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		position: relative;
+	 }
+ 	
+	 #bigDisplay #background {
+ 		width: 100%;
+ 		height: 100%;
+ 		position: absolute;
+ 		left: 0;
+ 		top: 0;
+	 }
+ 	
+ 
+ 	#bigDisplay .option {
+ 		position: relative;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		width: 7cm;
+ 		height: 4.5cm;
+ 		background-color: black;
+ 		color: white;
+ 		display: inline-block;
+ 		margin: 3mm;
+ 	}
+ 	
+ 	#bigDisplay .option video {
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+ 
+ 	#bigDisplay .option #content {
+ 		width: 100%;
+ 		height: 30%;
+ 		position: absolute;
+ 		bottom: 0;
+		background-color:  rgba(255, 255, 255, 0.2);
+		text-align: left
+ 		
+ 	}
+
+ 	#bigDisplay .option #content div {
+ 		display: inline-block;
+ 		margin: 0 2mm;
+ 		
+ 	}
+
+ 	#bigDisplay .option #content #pixelHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 	}
+
+ 	#bigDisplay .option #content #sizeHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		left: 3.3cm;
+ 	}
+
+ 	#bigDisplay .option #content #priceHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		right: 0;l
+ 	}
+
+ 	#bigDisplay .option  #pixel {
+ 		font-size: 40px;
+ 	}
+
+ 	#bigDisplay .option  #originalSize {
+ 		font-size: 15px;
+ 	}
+
+ 	#bigDisplay .option  #reducedSize {
+ 		font-size: 20px;
+ 	}
+
+ 	#bigDisplay .option  #price {
+ 		line-height: 1.5cm; 	
+ 	}
+
+	.heading {
+		padding: 8mm 0 3mm 3mm;
+	}
+	
+	.heading #text {
+		font-size: 40px;
+		color: white;
+		font-weight: 700;
+	}
+
+.heading #number {
+	border-radius: 50%;
+	background-color:  orange;
+	color: rgba(0, 0, 0, 0.8);
+	width: 1.3cm;
+	height: 1.3cm;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3cm;
+	text-align: center;
+	display: inline-block;
+	
+}
+
+.bigButton {
+ 		font-size: 40px;
+		font-weight: 700;
+		padding: 1cm 3cm;
+ 		border-radius: 10px;
+ 		box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+ 		border: 0px solid;
+ 		color: white;
+ 		transition: background-color 0.3s;
+ 		background-color: rgba(0, 0, 0, 1);
+ 	}
+ 	
+	#cardPaymentForm [name=cardNumber] {
+		width: 85%;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px 0 0 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 5mm 0;
+		color: white;
+	}
+
+	#cardPaymentForm [name=cvv] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0 1cm 0 0;
+		color: white;
+	}
+
+	#cardPaymentForm [name=expiryDateMonth] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px 0 0 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+	}
+
+	#cardPaymentForm #expiryDateSlash {
+		width: 2cm;
+		line-height: 3cm;
+		font-size: 35px;
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+		display: inline-block;
+		
+		margin-left: -15mm;
+		margin-right: -15mm;
+		z-index: 9;
+	}
+
+	#cardPaymentForm [name=expiryDateYear] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 0 10px 10px 0;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+	}
+
+	#cardPaymentForm [type=submit] {
+		width: 96%;
+		height: 3cm;
+		background-color: rgba(0, 0, 0, 1);
+		font-size: 35px;
+		border-radius: 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		margin: 1cm 0;
+		color: white;
+		transition: background-color 0.2s;
+	}
+	
+	#cardPaymentForm [type=submit]:active {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	
+#cardPaymentForm #power {
+	color: white;
+ 	font-size: 20px;: 
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+ 
