@@ -1,10 +1,14 @@
+:root {
+	--darkColor: blue;
+}
+
 body {
 	 background-color: rgba(0, 0, 0, 1);
-	 color: white;
-	 fill: white;
 	 padding: 0;
 	 margin: 0;
 	font-family: monaco;
+//	 color: white;
+fill: white;
  }
  
  button:focus {
@@ -27,349 +31,218 @@ body {
 //	border: 0px solid;
 }
 
-a {
-	text-decoration: none;
-}
-
 .centerHolder {
 	width: 100%;
 	text-align: center;
-}
+}/*
 
+.g-signin2 {
+	height: 5cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
+	background-color: blue;
+	width: 80%;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	margin: 1cm 0;
+}
+ */
+.facebookLoginButton {
+	height: 5cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
+	background-color: blue;
+	width: 80%;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	display: block;
+}
+ 
  header {
-	width: 100%;
-	height: 110px;
+	display: block;
+	width: 98%;
+	background-color: rgba(0, 0, 0, 1);
+	line-height: 3cm;
+	font-size: 35px;
+	color: white;
+	font-weight: 700;
 	position: fixed;
 	top: 0;
 	left: 0;
-	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
-	background-color: rgba(0, 0, 0, 0.95);
-	overflow-y: hidden;
-	display: block;
-	transition: height 0.3s;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+	padding: 0 1%;
 }
 
-header #youtubeIcon {
+header #credits {
+	float: right;
+	margin: 0 10px;
+}
+
+.coinHolder {
+}
+
+.coinHolder svg {
+	fill: yellow;
 	height: 40px;
-	margin: 0 10px;
-	line-height: 120px;
-	background-color: rgba(255, 255, 255, 0.2);
-	transform: translateY(7px);
-}
- 
-header #title {
-	font-size: 40px;
-	font-weight: 300;
-	line-height: 110px;
-	font-family: patrick hand;
-	color: white;
-}
- 
-header #iconHolder {
-	height: 110px;
-	line-height: 120px;
+	width: 40px;
 	margin: 0;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
- 
-header #iconHolder .icon {
-	margin: 0 10px;
-}
- 
-header #iconHolder .icon svg {
-	height: 30px;
-	width: 30px;
-}
- 
-.videoBox {
-//	background-color: rgba(0, 0, 0, 0.05);
-	margin: 2vw;
-	width: 46vw;
-	height: 45vw;
+	margin: -10px 0 0 0;
 	display: inline-block;
-	color: white;
+	transform: translateY(20%);
 }
 
-.videoBox #videoImageHolder {
-	width: 44vw;
-	height: 30vw;
-	margin: 0 1vw;
-	overflow: hidden;
-	display: block;
-}
-
-.videoBox #videoImageHolder #image {
-	width: 100%;
-	height: 100%;
-	display: block;
-	color: white;
-}
-
-.videoBox #channelImageHolder {
-	margin: 0;
-	padding: 2vw 2vw 2vw 1vw;
-	overflow: hidden;
-	display: inline-block;
-}
-
-.videoBox #channelImageHolder #image {
-	width: 7vw;
-	height: 7vw;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 50%;
-	color: white;
-	
-	display: none;
-}
-
-.videoBox #contentHolder {
-	margin: 0;
-	height: 12vw;
-	overflow: hidden;
-	display: inline-block;
-	width: 35vw;
-	color: black;
-	padding: 1vw 0;
-	color: white;
-}
-
-.videoBox #contentHolder #name {
-	font-size: 25px;
-	height: 6vw;
-	font-weight: 700;
-	overflow: hidden;
-	display: inline-block;
-	color: white;
-}
-
-.videoBox #contentHolder #detailsHolder {
-	height: 8vw;
-	overflow: hidden;
-	display: inline-block;
-	color: rgba(255, 255, 255, 0.6);
-}
-
-.videoBox #contentHolder #detailsHolder label {
-	font-size: 22px;
-	font-weight: 100;
-	display: inline-block;
-}
-
-.videoBox #contentHolder #detailsHolder ul {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	
-}
-
-.videoBox #contentHolder #detailsHolder ul li {
-	display: inline-block;
-	margin: 0 3px;
-}
-
-
-.resultBox {
-	margin: 2vw;
-	width: 96vw;
-	height: 18vw;
-	display: block;
-	color: white;
-}
-
-.resultBox #videoImageHolder {
-	width: 30vw;
-	height: 18vw;
-	margin: 0 1vw;
-	overflow: hidden;
-	display: inline-block;
-}
-
-.resultBox #videoImageHolder #image {
-	width: 100%;
-	height: 100%;
-	display: block;
-	color: white;
-}
-
-.resultBox #contentHolder {
-	margin: 0;
-	height: 18vw;
-	overflow: hidden;
-	display: inline-block;
-	width: 50vw;
-	color: black;
-	padding: 1vw 0;
-	color: white;
-}
-
-.resultBox #contentHolder #name {
-	font-size: 25px;
-	height: 6vw;
-	font-weight: 700;
-	overflow: hidden;
-	display: inline-block;
-	color: white;
-}
-
-.resultBox #contentHolder #detailsHolder {
-	height: 8vw;
-	width: 100%;
-	overflow: hidden;
-	display: inline-block;
-	color: rgba(255, 255, 255, 0.6);
-}
-
-.resultBox #contentHolder #detailsHolder label {
-	font-size: 22px;
-	font-weight: 100;
-	display: inline-block;
-}
-
-.resultBox #contentHolder #detailsHolder ul {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	
-}
-
-.resultBox #contentHolder #detailsHolder ul li {
-	display: inline-block;
-	margin: 0 3px;
-}
-
-
-#searchHolder {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: none;
-}
-
-#searchHolder form {
-	width: 100%;
-	line-height: 110px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
-	background-color: rgba(0, 0, 0, 0.95);
-}
-
-#searchHolder form [name=input] {
-	width: 85%;
-	height: 70px;
-	border: none;
-	border-bottom: 3px solid rgba(255, 255, 255, 1);
-	font-size: 30px;
-	margin: 5px 0;
+.coinHolder #number {
 	font-size: 28px;
-	background-color: rgba(0, 0, 0, 0);
+//	float: right;
+	margin: -0 0 0 -20px;
+	text-indent: 0;
+}
+
+ footer {
+	display: block;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 1);
+	height: 3cm;
 	color: white;
+	font-weight: 700;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
 }
 
-#searchHolder form #back {
-	margin: 2.5px 10px;
-	background-color: rgba(0, 0, 0, 0);
-	color: white;
-	border: none;
-	height: 80px;
-	font-size: 40px;
+footer #bottomNav {
+	width: 100%;
+	text-align: center;
 }
 
-#searchHolder form [type=submit] {
-	margin: 2.5px 10px;
-	background-color: rgba(0, 0, 0, 0);
-	border: none;
-	height: 80px;
+footer #bottomNav [selected] {
+	color: orange;
 }
 
-#searchHolder form [type=submit] svg {
-	height: 30px;
-	width: 30px;
+footer #bottomNav [selected] svg {
+	fill: orange;
+}
+
+footer #bottomNav .option {
+	border-radius: 40px;
+	transition: background-color 0.2s;
+	position: relative;
+	height: 100%;
+}
+
+footer #bottomNav .option:active {
+	background-color:  rgba(255, 255, 255, 0.2);
+}
+
+footer #icon {
 	fill: white;
 }
 
-#searchHolder #background {
+footer #icon svg {
+	height: 45px;
+	width: 45px;
+	margin: 10px 0;
+}
+
+footer #hint {
+	font-size: 20px;
+	margin: 0 0 5px 0;
+}
+
+footer #cinema #downloadIcon {
+	display: none;
+}
+
+.roundNotificationAttachment {
+	position: absolute;
+	right: 5mm;
+	top: 0;
+	border-radius: 50%;
+	background-color:  orange;
+	color: white;
+	width: 1.2cm;
+	height: 1.2cm;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.2cm;
+}
+
+footer #compactedIcon {
+	background-color:  green;
+	bottom: 0;
+	top: 1.4cm;
+}
+
+#body {
+	position: fixed;
+	top: 2.8cm;
+	height: 84%;
 	width: 100%;
-	height: 100%;
+}
+
+#body .page {
+	display: none;
+}
+
+#body #mainContent {
+	display: block;
+}
+ 
+#body #loader {
+	background-color:  rgba(255, 255, 255, 0.2);
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: rgba(255, 255, 255, 0.05);
-}
-
-	#videoSearcherForm #searchResults {
-		width: 100%;
-		margin: 0;
-		text-align: left;
-		border-radius: 0 0 5px 5px;
-		overflow: hidden;
-		background-color: rgba(0, 0, 0, 0);
-		max-height: 10cm;
-		overflow-y: scroll;
-	}
-	
-	#videoSearcherForm #searchResults .result {
-		width: 100%;
-		line-height: 1.5cm;
-		max-height: 1.5cm;
-		display: block;
-		font-size: 25px;
-		color: white;
-		text-indent: 3mm;
-		transition: background-color 0.2s;
-		overflow: hidden;
-	}
-
-	#videoSearcherForm #searchResults .result:active {
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-	
-#moreLoader {
-	text-align: center;
-	padding: 1.5cm 0;
-	background-color: rgba(255, 255, 255, 0.05);
-}
-	
-#moreLoader #loader {
-	width: 1cm;
-	height: 1cm;
-	border: 5px solid rgba(255, 255, 255, 0.7);
-	border-top: 5px solid rgba(255, 255, 255, 0.05);
-	border-radius: 50%;
-	display: inline-block;
-	margin: 0 3mm;
-	vertical-align: middle;
-	-webkit-animation: spin 0.4s linear infinite;
-}
-
-#errorHolder {
-	padding: 3cm 0;
-	background-color: rgba(255, 255, 255, 0.05);
+	height: 100%;
+	width: 100%;
 	display: none;
-	text-align: center;
+}
+ 
+#body #loader #roller {
+	background-color:  rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 4cm;
+	width: 4cm;
+	border: 15px solid rgba(0, 0, 0, 0.1);
+	border-top: 15px solid white;
+	border-radius: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	animation: spin 0.8s linear infinite;
 }
 
-#errorHolder #reload {
-	font-size: 30px;
+#body #mainContent {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow-y: scroll;
+}
+ 
+ #toast {
+	position: fixed;
+	bottom: 2cm;
+	display: none;
+	border-radius: 10px;
 	color: white;
-	border: none;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 1cm 2cm;
-	border-radius: 20px;
-	transition: background-color 0.2s;
-	
+	background-color: rgba(0, 0, 0, 0.7);
+	line-height: 7mm;
+	font-size: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 7mm 1cm;
+	opacity: 0;
+	text-align: center;
+	max-width: 80%;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	z-index: 9;
 }
 
-#errorHolder #reload:active {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-	
-	
 
  #bigDisplay {
  	width: 100%;
@@ -458,38 +331,53 @@ header #iconHolder .icon svg {
  	#bigDisplay .option #content #sizeHolder {
  		position: absolute;
  		top: 0;
- 		right: 0;
- 		line-height: 1.5cm;
+ 		left: 3.3cm;
+ 	}
+
+ 	#bigDisplay .option #content #priceHolder {
+ 		position: absolute;
+ 		top: 0;
+ 		right: 0;l
  	}
 
  	#bigDisplay .option  #pixel {
- 		font-size: 30px;
+ 		font-size: 40px;
  	}
 
  	#bigDisplay .option  #originalSize {
- 		font-size: 25px;
- 		line-height: 1.5cm;
- 		color: white;
- 		font-weight: 700;
+ 		font-size: 15px;
  	}
 
- #toast {
-	position: fixed;
-	bottom: 2cm;
-	display: none;
-	border-radius: 10px;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.7);
-	line-height: 7mm;
-	font-size: 25px;
-	left: 50%;
-	transform: translateX(-50%);
-	padding: 7mm 1cm;
-	opacity: 0;
+ 	#bigDisplay .option  #reducedSize {
+ 		font-size: 20px;
+ 	}
+
+ 	#bigDisplay .option  #price {
+ 		line-height: 1.5cm; 	
+ 	}
+
+	.heading {
+		padding: 8mm 0 3mm 3mm;
+	}
+	
+	.heading #text {
+		font-size: 40px;
+		color: white;
+		font-weight: 700;
+	}
+
+.heading #number {
+	border-radius: 50%;
+	background-color:  orange;
+	color: rgba(0, 0, 0, 0.8);
+	width: 1.3cm;
+	height: 1.3cm;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3cm;
 	text-align: center;
-	max-width: 80%;
-	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
-	z-index: 9;
+	display: inline-block;
+	
 }
 
 .bigButton {
@@ -504,8 +392,93 @@ header #iconHolder .icon svg {
  		background-color: rgba(0, 0, 0, 1);
  	}
  	
-#downloaderIframe {
-	display: none;
+	#cardPaymentForm [name=cardNumber] {
+		width: 85%;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px 0 0 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 5mm 0;
+		color: white;
+	}
+
+	#cardPaymentForm [name=cvv] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0 1cm 0 0;
+		color: white;
+	}
+
+	#cardPaymentForm [name=expiryDateMonth] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 10px 0 0 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+	}
+
+	#cardPaymentForm #expiryDateSlash {
+		width: 2cm;
+		line-height: 3cm;
+		font-size: 35px;
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+		display: inline-block;
+		
+		margin-left: -15mm;
+		margin-right: -15mm;
+		z-index: 9;
+	}
+
+	#cardPaymentForm [name=expiryDateYear] {
+		width: 2cm;
+		height: 3cm;
+		background-color: rgba(255, 255, 255, 0.1);
+		font-size: 35px;
+		border-radius: 0 10px 10px 0;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		padding: 0 5mm;
+		margin: 0;
+		color: white;
+	}
+
+	#cardPaymentForm [type=submit] {
+		width: 96%;
+		height: 3cm;
+		background-color: rgba(0, 0, 0, 1);
+		font-size: 35px;
+		border-radius: 10px;
+		box-shadow: 0 0 5px 0 rgba(255, 255, 255, 1);
+		border: 0px solid;
+		margin: 1cm 0;
+		color: white;
+		transition: background-color 0.2s;
+	}
+	
+	#cardPaymentForm [type=submit]:active {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	
+#cardPaymentForm #power {
+	color: white;
+ 	font-size: 20px;: 
 }
 
 @-webkit-keyframes spin {

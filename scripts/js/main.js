@@ -1,23 +1,33 @@
 $(document).ready(function() {
-	
-	try {
-		
-		Android;
-		
-	}
-	
-	catch(err) {
-		
-		if(navigator.userAgent.toLowerCase().indexOf("android") !== -1) {
-	
-//			website["templates"]["bigDisplay"].show('<br> <label class="comment"><br><br><b>TubeRazer</b> feels better on the app. Install the android app on your phone and enjoy unlimited experience!</label> <br><br><br><br><br> <button class="bigButton" onclick=\'downloadApp("android");\'><svg id="installSvg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" style="margin: 0 15px;"><path d="M12 21l-8-9h6v-12h4v12h6l-8 9zm9-1v2h-18v-2h-2v4h22v-4h-2z"/></svg>Install</button>', "Did you know?");
-			
-		}
-		
-	}
 
+	$("footer #bottomNav .option").click(function() {
+	
+		selectNav($(this).attr("id"));
+	
+		loadPage($(this).attr("id"));
+
+	});
+	
+	loadAllPages();
+				
+	selectNav("home");
+
+	loadPage("home");
+	
 });
 
+var website = [];
+	
+getWebsiteData();
+	
+	function selectNav(id) {
+	
+		$("footer #bottomNav .option").removeAttr("selected");
+		
+		$("footer #bottomNav #" + id).attr("selected", "true");
+		
+	}
+	
 	var loader = {
 		show: function() {
 			$("#body #loader").css({
@@ -31,16 +41,175 @@ $(document).ready(function() {
 		}
 	}
 	
-var website = {
-	templates: [],
-	youtube: {
-		apiKey: "AIzaSyCviWLPH2wE-4BlQMPvMU3aVVsfxpXWmg8"
-	},
-	user: {
-		device: {}
-	}
-};
 
+	function loadAllPages() {
+	
+		for(var i = 0; i < $("#body .page").length; i++) {
+		
+			var pageName = $("#body .page").eq(i).attr("page");
+		
+			getPage(i);
+	
+		}
+		
+		function getPage(index) {
+		
+			$.ajax({
+				type: "POST",
+				url: (page["rootPath"] + "templates/pages/" + pageName + ".php"),
+				data: {},
+				success: function(response) {
+				
+			//		loader.hide();
+				
+					$("#body .page").eq(index).html(response);
+				
+				},
+				error: function(response) {
+		//		alert(  JSON.stringify( response ) );
+				}
+			});
+		
+		}
+		
+	}
+	
+	function loadPage(pageName, callBackFunction) {
+	
+		if(website["currentPage"] !== pageName) {
+		
+			$("#body .page").attr("id", "");
+		
+			$("#body [page=" + pageName + "]").attr("id", "mainContent");
+		
+		}
+		
+		else {
+		
+			loader.show();
+		
+			$.ajax({
+				type: "POST",
+				url: (page["rootPath"] + "templates/pages/" + pageName + ".php"),
+				data: {},
+				success: function(response) {
+				
+					loader.hide();
+				
+					$("#body [page=" + pageName + "]").html(response);
+				
+				},
+				error: function(response) {
+		//		alert(  JSON.stringify( response ) );
+				}
+			});
+		
+		}
+	
+		if(callBackFunction !== undefined) {
+		
+			callBackFunction();
+			
+		}
+			
+		website["currentPage"] = pageName;
+		
+	}
+	
+	function toast(text) {
+	
+		$("#toast").css({
+			display: "block",
+			bottom: "4cm",
+			opacity: "1"
+		}).html(text);
+		
+		setTimeout(function() {
+		
+			$("#toast").css({
+				display: "none",
+				bottom: "2cm",
+				opacity: "0"
+			}).html(text);
+		
+		}, 2000);
+	
+	}
+	
+	function showFooterDownload(number) {
+	
+		$("footer #cinema #downloadIcon").show();
+		
+		$("footer #cinema #downloadIcon #number").html(number);
+		
+	}
+	
+	function showFooterCompacted(number) {
+	
+		$("footer #cinema #compactedIcon").show();
+		
+		$("footer #cinema #compactedIcon #number").html(number);
+		
+	}
+	
+	function getWebsiteData() {
+		
+		$.ajax({
+			type: "POST",
+			url: (page["rootPath"] + "backend/ajax-handler.php"),
+			dataType: "JSON",
+			data: {
+				"request": "websiteData"
+			},
+			success: function(response) {
+				
+		//		alert(  JSON.stringify( response ) );
+				
+				website["data"] = response
+	
+			},
+			error: function(response) {
+	
+				alert(  JSON.stringify( response ) );
+				
+			},
+		});
+		
+	}
+	
+	function searchYouTube(input) {
+	
+		selectNav("youtube");
+
+ 		loadPage("youtube", 
+ 		
+ 			setTimeout(function() { 
+ 		
+ 				$("#head #url").val(input);
+ 			
+ 				$("#mainIframe").attr("src", "youtube.com/search?q=" + input)
+ 			
+ 			}, 1000)
+ 			
+ 		);
+		
+	}
+	
+	setInterval(function() {
+		
+		getWebsiteData();
+	
+		
+		showFooterDownload(website["data"]["downloads"]["pending"]["number"]);
+				
+		showFooterCompacted(website["data"]["downloads"]["ready"]["number"]);
+				
+		$("[special=creditsNumber]").html(website["data"]["accountDetails"]["credits"]);
+		
+	}, 500);
+	
+	website["templates"] = [];
+	
 	website["templates"]["bigDisplay"] = {
 		show: function(content, topic) {
 			
@@ -65,66 +234,4 @@ var website = {
 		
 		}
 	}
-	
-	
-	function toast(text) {
-	
-		$("#toast").css({
-			display: "block",
-			bottom: "4cm",
-			opacity: "1"
-		}).html(text);
-		
-		setTimeout(function() {
-		
-			$("#toast").css({
-				display: "none",
-				bottom: "2cm",
-				opacity: "0"
-			}).html(text);
-		
-		}, 2000);
-	
-	}
-	
-	var getDeviceType = function() {
-
-		const ua = navigator.userAgent;
-
-		if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-
-			return "tablet";
-		
-		}
-		if (
-    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      		ua
-    		)
-  ) {
-  
-			return "mobile";
-		
-		}
-
-		return "desktop";
-
-	};
-
-	website["user"]["device"]["type"] = getDeviceType();
-	
-	function downloadApp(os) {
-	
-		if(os == "android") {
-			
-			website["templates"]["bigDisplay"].hide();
-		
-			toast("Downloading . . .");
-		
- 			$("#downloaderIframe").attr("src", "https://tuberazer.com/download-app/android/begin");
- 				
-		}
-	
-	}
-	
-//	alert(navigator.userAgent.toLowerCase());
 	

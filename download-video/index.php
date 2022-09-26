@@ -1,37 +1,45 @@
 <?php
 	
-	$page = array("rootPath" => "../");
+	require_once("../backend/connection.php");
+	
+	include_once("../backend/general-info.php");
+	
+	include_once("../backend/methods.php");
 	
 	
-	$url = $_GET["url"];
-	
-	$name = $_GET["name"];
-	
-	$pixel = $_GET["pixel"];
+	$downloadId = $_GET["id"];
 	
 	
-	header("Content-type: video/mp4");
-	
-	header('Content-Disposition: attachment; filename="' . $name . '"');
-	
-	header('Content-Description: File Transfer');
-	
-	header('Content-Transfer-Encoding: binary');
-	
-	header('Expires: 0');
-	
-	header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-	
-	header('Pragma: public');
-	
-	ob_clean();
-	
-	flush();
+	$downloadDetails = downloadDetails($downloadId);
 	
 	
-	echo file_get_contents($url);
+	if($downloadDetails["status"] == "ready") {
+	
+		$sql = "UPDATE downloads SET status = 'downloaded' WHERE download_id = '$downloadId' ";
+			
+		if(mysqli_query($conn, $sql)) {
+		
+		
+		
+		}
+	
+	}
+	
+	else if($downloadDetails["status"] == "downloaded") {
+	
+		// remove two credits
+	
+	}
+	
+	else {}
 	
 	
-	exit();
+	header("Content-type: application/" . $website["constants"]["compactedVideosExtension"]);
+	
+//	header('Content-Disposition: attachment; filename="' . $name . '"');
+	
+	readfile("../files/compacted-videos/" . $downloadId . "." . $website["constants"]["compactedVideosExtension"]);
+	
+	die();
 	
  ?>

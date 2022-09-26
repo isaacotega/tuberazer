@@ -3,7 +3,7 @@
 	//temporary login
 	
 	
-				//	setcookie("supertubeAccountCookieCode",  "54873482272942294518", time() + (86400 * 30), "/");
+					setcookie("supertubeAccountCookieCode",  "54873482272942294518", time() + (86400 * 30), "/");
 		
 	
 	date_default_timezone_set("Africa/Lagos");

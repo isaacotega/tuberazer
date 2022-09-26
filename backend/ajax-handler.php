@@ -4,9 +4,9 @@
 	
 	include_once("general-info.php");
 	
-	include_once("functions.php");
-	
 	include_once("methods.php");
+	
+	include_once("functions.php");
 	
 	
 	$request = $_POST["request"];
@@ -70,6 +70,164 @@
 		
 			$data = array("status" => "error", "error" => mysqli_error($conn));
 	
+		}
+		
+		
+		echo json_encode($data);
+	
+	}
+	
+	
+	if($request == "websiteData") {
+		
+		$pendingDownloadsNumber = accountDetails($website["user"]["account"]["usercode"])["downloads"]["pending"]["number"];
+	
+		$readyDownloadsNumber = accountDetails($website["user"]["account"]["usercode"])["downloads"]["ready"]["number"];
+	
+		$pendingDownloadsIds = accountDetails($website["user"]["account"]["usercode"])["downloads"]["pending"]["ids"];
+	
+		$readyDownloadsIds = accountDetails($website["user"]["account"]["usercode"])["downloads"]["ready"]["ids"];
+		
+		$accountDetails = accountDetails($website["user"]["account"]["usercode"]);
+	
+		$data = array(
+			"downloads" => array(
+				"pending" => array("details" => array(), "number" => $pendingDownloadsNumber),
+				"ready" => array("details" => array(), "number" => $readyDownloadsNumber)
+			),
+			"accountDetails" => $accountDetails
+		);
+			
+			foreach($pendingDownloadsIds as $eachId) {
+				
+				$data["downloads"]["pending"]["details"][] = downloadDetails($eachId);
+			
+			}
+			
+			foreach($readyDownloadsIds as $eachId) {
+				
+				$data["downloads"]["ready"]["details"][] = downloadDetails($eachId);
+			
+			}
+			
+		
+		echo json_encode($data);
+	
+	}
+	
+	if($request == "youtubeVideos") {
+	
+		$data = array(
+			
+			"videos" => array(
+			
+			array(
+				"name" => "Name of video"
+			),
+			array(
+				"name" => "Name of video"
+			),array(
+				"name" => "Name of video"
+			),array(
+				"name" => "Name of video"
+			),
+			
+			)
+		);
+		
+		echo json_encode($data);
+	
+	}
+	
+	if($request == "login") {
+	
+		$type = $_POST["type"];
+		
+		
+		$idToken = mysqli_real_escape_string($conn, $_POST["idToken"]);
+		
+		$name = mysqli_real_escape_string($conn, $_POST["name"]);
+		
+		$username = strtolower(str_replace(" ", "", $name));
+		
+		
+		$usercode = mysqli_real_escape_string($conn, randomDigits(20));
+		
+		$cookieCode = mysqli_real_escape_string($conn, randomDigits(20));
+		
+		
+		// check if user is registered
+		
+			$sql = "SELECT * FROM accounts WHERE type = '$type' AND social_account_id = '$idToken' ";
+			
+			if($result = mysqli_query($conn, $sql)) {
+			
+				if(mysqli_num_rows($result) == 0) {
+				
+					$isRegistered = false;
+				
+				}
+				
+				else {
+				
+					$isRegistered = true;
+					
+					$row = mysqli_fetch_aray($result);
+					
+					$registeredCookieCode = $row["cookie_code"];
+				
+				}
+			
+			}
+			
+		
+		
+		if($type == "google") {
+		
+			$imageUrl = mysqli_real_escape_string($conn, $_POST["imageUrl"]);
+		
+			$email = mysqli_real_escape_string($conn, $_POST["email"]);
+			
+			
+			$registrationSql = "INSERT INTO accounts (usercode, username, cookie_code, type, social_account_id, date_registered) VALUES ('$usercode', '$username', '$cookieCode', '$type', '$idToken', '$date') ";
+		
+		
+		}
+		
+		else if($type == "facebook") {
+		
+			$registrationSql = "INSERT INTO accounts (usercode, username, cookie_code, type, social_account_id, date_registered) VALUES ('$usercode', '$username', '$cookieCode', '$type', '$idToken', '$date') ";
+		
+		}
+		
+		else {}
+		
+		
+		
+		if($isRegistered) {
+		
+			setcookie("supertubeAccountCookieCode",  $registeredCookieCode, time() + (86400 * 30), "/");
+		
+			$data = array("status" => "success");
+				
+		}
+		
+		else {
+		
+			if(mysqli_query($conn, $registrationSql)) {
+			
+				$data = array("status" => "success");
+				
+				setcookie("supertubeAccountCookieCode",  $cookieCode, time() + (86400 * 30), "/");
+		
+			}
+		
+			else {
+		
+				$data = array("status" => "error", "error" => mysqli_error($conn));
+	
+			}
+			
 		}
 		
 		
