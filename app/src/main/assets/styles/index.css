@@ -1,0 +1,28 @@
+body {
+	 background: black;
+	 margin: 0;
+ }
+
+button {
+	outline: none;
+}
+ 
+ input {
+	outline: none;
+}
+
+ textarea {
+	outline: none;
+}
+
+ select {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+}
